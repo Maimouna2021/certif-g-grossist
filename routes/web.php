@@ -69,6 +69,11 @@ Route::get('/facture/ajout', [FactureController::class, 'create'])->name('factur
 Route::post('/facture/store', [FactureController::class, 'store'])->name('facture.store');
 Route::get('/facture/pdf', [CommandeController::class, 'pdf'])->name('facture.pdf');
 
+Route::get('/test', function (){
+    return view('pages.test');
+});
+
+
 Route::get('/dashboard', function () {
     return view('pages.accueil');
 Route::get('produit', function(){

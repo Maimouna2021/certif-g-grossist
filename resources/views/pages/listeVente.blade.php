@@ -9,8 +9,9 @@
         </div>
     </div>
 
-    <div class="row listeVente my-5">
-            <div class="col-7 tableau">
+    <div class="row listeVente my-5 p-5">
+            <div class="col-10 tableau">
+            <div style="overflow-x:auto;"> 
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -49,6 +50,7 @@
                     </tbody>
                    @endforeach
                 </table>
+            </div>
                   {{-- <div class="container mt-3">
                         <div class="row" style="width: 15%;">
                             {{ $produitVendus->links()}}

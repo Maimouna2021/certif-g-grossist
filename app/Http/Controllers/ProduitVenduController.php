@@ -11,7 +11,7 @@ class ProduitVenduController extends Controller
 {
      // fonction qui nous permet de lister les produitVendus
      public function index (){
-        $produitVendus = ProduitVendu::paginate(1);
+        $produitVendus = ProduitVendu::paginate(2);
         return view('pages.listeVente', [
             'produitVendus'=>$produitVendus
         ]);

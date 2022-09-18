@@ -23,6 +23,7 @@ class ClientController extends Controller
             'clients'=>$clients
         ]);
     }
+    
 
     // fonction qui nous permet de récupérer les données du formulaire 
     //et les insère dans la base de donnée

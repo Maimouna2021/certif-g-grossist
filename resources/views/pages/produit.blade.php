@@ -13,6 +13,7 @@
         <div class="text-center">
             <h1>Liste des produits</h1>
         </div>
+    <div style="overflow-x:auto;">
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -53,14 +54,11 @@
                 </tbody>
                 @endforeach
             </table>
-            <div class="container mt-3">
-                        <div class="row" style="width: 15%;">
-                            {{ $produits->links()}}
-                        </div>
-            </div>     
+            {{ $produits->links() }}
             </div>
         </div>
     </div>
+
 </div>
 
 

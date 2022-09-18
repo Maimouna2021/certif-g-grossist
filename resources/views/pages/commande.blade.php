@@ -14,7 +14,7 @@
                 <h1>Liste des Commandes</h1>
             </div>
             <a href="{{ url('facture/pdf')}}" class="boutonImpression">Imprimer</a>
-        
+        <div style="overflow-x:auto;">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -52,6 +52,7 @@
                     </tbody>
                     @endforeach
             </table>
+        </div>    
              {{-- <div class="container mt-3">
                 <div class="row" style="width: 15%;">
                     {{ $commandes->links()}}

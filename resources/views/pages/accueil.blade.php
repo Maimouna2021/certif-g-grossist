@@ -3,12 +3,12 @@
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
     @include('layouts.sidebare')
-    <h1 class=" p-3 mt-5 mbd-titre-1 text-center col-xs-1 col-sm-2 col-md-3 col-lg 6">Accueil</h1>
+    <h1 class=" p-3 mt-5 text-center">Accueil</h1>
         <div class="container mbd-acueil-container d-flex justify-content-center">
             <div class="my-5 d-flex flex-column">
                 <div class="row my-5! w-75" style="margin: 0 auto">
                     <div class="row">
-                        <div class="card-body mbd-carte P-3 ">
+                        <div class="card-body mbd-carte P-3">
                             <div>
                                 <span class="iconify" data-icon="ic:outline-production-quantity-limits" style="color: white;" data-width="30" data-height="30"></span>                
                             </div> 

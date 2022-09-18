@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <div class="container ">
-    <div class="row">
+    <div class="row"
         <div class="col-1">
             @include('layouts.sidebare')
         </div>
@@ -13,7 +13,8 @@
     <div class="row text-center p-5">
         <h1>Liste des clients</h1>
     </div>
-                <div class="col-7 tableau">
+                <div class="mbd-tableau my-3">
+                <div style="overflow-x:auto;">
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
@@ -50,11 +51,14 @@
                             </tbody>
                             @endforeach
                     </table>
-                    <div class="container mt-3">
-                        <div class="row" style="width: 15%;">
-                            {{ $clients->links()}}
-                        </div>
+                </div>    
+                <div class="container mt-3">
+                    <div class="row" style="class" width: 100%;>
+                        {{ $clients->links()}}
                     </div>
+               </div>
+            </div>
+                </div>    
                 </div>
         </div>
 </div>
@@ -66,7 +70,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modifier un Client</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Modifier Client</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
                 <div class="modal-body">
@@ -75,34 +79,26 @@
                                 <form method="POST" action="{{ route('client.update', $client->id)}}" enctype="multipart/form-data" class="w-50">
                                     @method("PUT")
                                     @csrf
-                                    <div class="col-sm-2 col-form-label">
-                                        <label>Prenom</label>
-                                        <input type="text" class="form-control" name="prenom" placeholder="Prenom" required>
+                                    <!-- Prenom -->
+                                    <div>
+                                        <x-input id="prenom" class="block mt-1 w-full form-control" type="text" name="prenom" :value="old('prenom')" placeholder="prenom" required autofocus />
                                     </div>
-                                    <div class="col-md-3 mb-3">
-                                        <label>Nom</label>
-                                        <input type="text" class="form-control" name="nom" placeholder="Nom" required>
+                                    <!-- Nom -->
+                                    <div class="mt-4">
+                                        <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="nom" required />
                                     </div>
-                                    <div class="col-md-3 mb-3">
-                                        <label>Adresse</label>
-                                        <input type="text" class="form-control" name="adresse" placeholder="Adresse" required>
+                                    <!-- Téléphone -->
+                                    <div class="mt-4">
+                                        <x-input id="tel" class="block mt-1 w-full form-control" type="tel" name="tel" :value="old('tel')" placeholder="tel" required />
                                     </div>
-                                    <div class="col-md-3 mb-3">
-                                        <label>Telephone</label>
-                                        <input type="text" class="form-control" name="tel" placeholder="Telephone" required>
+                                    <!-- Adresse -->
+                                    <div class="mt-4">
+                                        <x-input id="adresse" class="block mt-1 w-full form-control" type="adresse" name="adresse" :value="old('adresse')" placeholder="adresse" required />
                                     </div>
                                     <div class="modal-footer">
-                                        {{-- <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
                                         <button type="submit" class="btn btn-success">Enregistrer</button>
-                                    </div> --}}
-                                     <div class="text-right">
-                                    <button href="{{ route('client.index')}}" class="btn" style=" background: #790FFF; color: white;">
-                                        Enregistrer
-                                    </button>
-                                    <button href="{{ route('client.create')}}" class="btn" style=" background: #790FFF; color: white;">
-                                        fermer
-                                    </button>
-                            </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -110,6 +106,3 @@
         </div>
     </div>
 </div>
-
-
-

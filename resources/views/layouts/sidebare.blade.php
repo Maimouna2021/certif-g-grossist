@@ -6,9 +6,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-        <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <title>Sidebar & navbar</title>
-
     </head>
 
 <div class="mbd-global-navbar-sidebar">
@@ -22,11 +21,6 @@
             <div>
                 <a href="{{ route('dashboard')}}" class="mbd-bouton_deconnexion">Deconnexion</a>
             </div>
-             {{-- <div class="text-end mb-5">
-                    <a href="{{ route('dashboard')}}" class="btn" style=" background: #790FFF; color: white;">
-                        Deconnexion
-                    </a>
-                </div> --}}
         </div>  
     </header>
     <!--------fin header------------>
