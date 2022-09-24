@@ -9,8 +9,11 @@
         </div>
     </div>
 
-    <div class="row listeVente my-5 p-5">
-            <div class="col-10 tableau">
+    <div class="row mbd-listeVente my-5">
+            <div class="mbd-tableau my-5">
+                <div class="text-center">
+                    <h1>Liste des ventes</h1>
+                </div>
             <div style="overflow-x:auto;"> 
                 <table class="table table-striped table-hover">
                     <thead>
@@ -33,7 +36,7 @@
                         <td>{{$produitVendu->client->nom }}</td>
                               <td>
                             <a href="{{ route('produitVendu.edit', $produitVendu->id)}}" id="{{$produitVendu->id}}" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="40" data-height="50"></span>
+                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="30" data-height="30"></span>
                             </a>
                         </td>
                         <td>
@@ -41,7 +44,7 @@
                                 @csrf
                                 @method("DELETE")
                                 <button type="submit">
-                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="40" data-height="50"></span>
+                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="30" data-height="30"></span>
                                 </button>
                             </form>
                         </td>
@@ -56,9 +59,7 @@
                             {{ $produitVendus->links()}}
                         </div>
             </div>   --}}
-         <div class="d-flex justify-content-end p-3">
-            <button type="submit" class="btn boutonretour" value="retour">Retour</button>
-        </div>
+    
             </div>
         </div>
     </div>
@@ -67,46 +68,54 @@
 
 {{-- Modale form update --}}
 
+    
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modifier Produit</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-                <div class="container p-5">
-                <div class="row p-5 bg-white formulairedajout">
-             <form method="POST" action="{{ route('produitVendu.update', $produitVendu->id)}}" enctype="multipart/form-data" class="w-50">
-                 @method("PUT")
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modifier une vente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+    <div class="modal-body " style="background:#8551C8;">
+    <div class="content">
+        <div class="row formulairedajout">
+            <form method="POST" action="{{ route('produitVendu.update', $produitVendu->id)}}" enctype="multipart/form-data" class="w-50">
+                @method("PUT")
                 @csrf
+                  
                 <!-- libelle -->
                 <div>
-                    <x-input id="name" class="block mt-1 w-full form-control" type="text" name="libelle" :value="old('libelle')" placeholder="libelle" required autofocus />
+                    <x-input id="name" class="block mt-1 w-full form-control" type="text" name="libelle" :value="old('libelle')" placeholder="Libelle" required autofocus />
                 </div>
 
                 <!-- Quantite -->
                 <div class="mt-4">
-                    <x-input id="quantite" class="block mt-1 w-full form-control" type="quantite" name="quantite" :value="old('quantite')" placeholder="quantite" required />
+                    <x-input id="quantite" class="block mt-1 w-full form-control" type="quantite" name="quantite" :value="old('quantite')" placeholder="Quantite" required />
                 </div>
 
                   <!-- Nom -->
                 <div class="mt-4">
-                    <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="nom" required />
+                    <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="Nom" required />
                 </div>
 
                    <!-- Prenom -->
                 <div class="mt-4">
-                    <x-input id="prenom" class="block mt-1 w-full form-control" type="prenom" name="prenom" :value="old('prenom')" placeholder="prenom" required />
+                    <x-input id="prenom" class="block mt-1 w-full form-control" type="prenom" name="prenom" :value="old('prenom')" placeholder="Prenom" required />
                 </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" class="btn btn-success">Enregistrer</button>
-            </div>
-        </form>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <button type="submit" class="btn bg-white">Enregistrer</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn bg-white" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                 
+                </div>
+                
+            </form>
         </div>
-      </div>
-     
     </div>
-  </div>
+    </div>
+    </div>
+    </div>
 </div>

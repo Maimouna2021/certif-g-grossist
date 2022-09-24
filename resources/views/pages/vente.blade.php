@@ -12,7 +12,7 @@
 <div class="container mt-5 p-5">
     <div class="card">
         <div class="card-header text-whith" style=" background: #790FFF;">
-           <h3 style="text-align:center; color:white">Liste des commandes</h3>
+           <h3 style="text-align:center; color:white">Ajouter une vente</h3>
         </div>
     <div class="card-body">
        <form method="POST" action="{{ url('produitVendu/store')}}" enctype="multipart/form-data">

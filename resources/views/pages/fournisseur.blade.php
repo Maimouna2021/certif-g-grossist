@@ -64,43 +64,50 @@
     
     {{-- Modale form update --}}
     
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modifier fournisseur</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                    <div class="modal-body">
-                            <div class="container p-5">
-                                <div class="row p-5 bg-white formulairedajout">
-                                    <form method="POST" action="{{ route('fournisseur.update', $fournisseur->id)}}" enctype="multipart/form-data" class="w-50">
-                                        @method("PUT")
-                                        @csrf
-                                        <!-- Prenom -->
-                                        <div>
-                                            <x-input id="prenom" class="block mt-1 w-full form-control" type="text" name="prenom" :value="old('prenom')" placeholder="prenom" required autofocus />
-                                        </div>
-                                        <!-- Nom -->
-                                        <div class="mt-4">
-                                            <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="nom" required />
-                                        </div>
-                                        <!-- Téléphone -->
-                                        <div class="mt-4">
-                                            <x-input id="tel" class="block mt-1 w-full form-control" type="tel" name="tel" :value="old('tel')" placeholder="tel" required />
-                                        </div>
-                                        <!-- Adresse -->
-                                        <div class="mt-4">
-                                            <x-input id="adresse" class="block mt-1 w-full form-control" type="adresse" name="adresse" :value="old('adresse')" placeholder="adresse" required />
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
-                                            <button type="submit" class="btn btn-success">Enregistrer</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                    </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modifier un fournisseur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+    <div class="modal-body " style="background:#8551C8;">
+    <div class="content">
+        <div class="row formulairedajout">
+            <form method="POST" action="{{ route('fournisseur.update', $fournisseur->id)}}" enctype="multipart/form-data" class="w-50">
+                @method("PUT")
+                @csrf
+                                        
+                <!-- Prenom -->
+                <div>
+                    <x-input id="prenom" class="block mt-1 w-full form-control" type="text" name="prenom" :value="old('prenom')" placeholder="Prenom" required autofocus />
+                </div>
+                <!-- Nom -->
+                <div class="mt-4">
+                    <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="Nom" required />
+                </div>
+                <!-- Téléphone -->
+                <div class="mt-4">
+                    <x-input id="tel" class="block mt-1 w-full form-control" type="tel" name="tel" :value="old('tel')" placeholder="Telephone" required />
+                </div>
+                <!-- Adresse -->
+                <div class="mt-4">
+                    <x-input id="adresse" class="block mt-1 w-full form-control" type="adresse" name="adresse" :value="old('adresse')" placeholder="Adresse" required />
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <button type="submit" class="btn bg-white">Enregistrer</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn bg-white" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                 
+                </div>
+                
+            </form>
         </div>
     </div>
+    </div>
+    </div>
+    </div>
+</div>

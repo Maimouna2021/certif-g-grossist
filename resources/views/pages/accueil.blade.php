@@ -6,7 +6,7 @@
     <h1 class=" p-3 mt-5 text-center">Accueil</h1>
         <div class="container mbd-acueil-container d-flex justify-content-center">
             <div class="my-5 d-flex flex-column">
-                <div class="row my-5! w-75" style="margin: 0 auto">
+                <div class="row my-5! w-100" style="margin: 0 auto">
                     <div class="row">
                         <div class="card-body mbd-carte P-3">
                             <div>

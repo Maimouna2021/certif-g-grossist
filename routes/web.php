@@ -18,18 +18,28 @@ use App\Http\Controllers\ProduitVenduController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/logout', function () {
+    return view('auth.login');
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    
 // Route pour les produits
-Route::get('/produit', [ProduitController::class, 'index'])->name('produit.index');
+Route::get('/produit', [ProduitController::class, 'index'])->name('produit.index'); 
 Route::get('/produit/ajout', [ProduitController::class, 'create'])->name('produit.create');
 Route::post('/produit/store', [ProduitController::class, 'store'])->name('produit.store');
 Route::put('/produit/update/{id}', [ProduitController::class, 'update'])->name('produit.update');
 Route::get('/produit/edit/{id}', [ProduitController::class, 'edit'])->name('produit.edit');
 Route::delete('/produit/delete/{id}', [ProduitController::class, 'delete'])->name('produit.delete');
 Route::get('/produit/list', [ProduitController::class, 'show'])->name('produit.show');
+Route::get('/produit/pdf', [ProduitController::class, 'createPDF']);
+
 
 // Route pour les clients
 Route::get('/client', [ClientController::class, 'index'])->name('client.index');
@@ -67,18 +77,14 @@ Route::delete('/commande/delete/{id}', [CommandeController::class, 'delete'])->n
 Route::get('/facture', [FactureController::class, 'index'])->name('facture.index');
 Route::get('/facture/ajout', [FactureController::class, 'create'])->name('facture.create');
 Route::post('/facture/store', [FactureController::class, 'store'])->name('facture.store');
-Route::get('/facture/pdf', [CommandeController::class, 'pdf'])->name('facture.pdf');
-
-Route::get('/test', function (){
-    return view('pages.test');
+Route::put('/facture/update/{id}', [FactureController::class, 'update'])->name('facture.update');
+Route::get('/facture/edit/{id}', [FactureController::class, 'edit'])->name('facture.edit');
+Route::delete('/facture/delete/{id}', [FactureController::class, 'delete'])->name('facture.delete');
+   
 });
-
 
 Route::get('/dashboard', function () {
     return view('pages.accueil');
-Route::get('produit', function(){
-        return view('pages.produit');
-    });
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

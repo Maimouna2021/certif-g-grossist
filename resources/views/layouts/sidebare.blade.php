@@ -9,23 +9,34 @@
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <title>Sidebar & navbar</title>
     </head>
-
 <div class="mbd-global-navbar-sidebar">
     <input type="checkbox" id="check">
     <!--------debut de header------------>
     <header>
-        <div class="mbd-hearder-navbar">
-            <label for="check">
-                <i class="fas fa-bars" id="sidebar_btn"></i>
-            </label>
-            <div>
-                <a href="{{ route('dashboard')}}" class="mbd-bouton_deconnexion">Deconnexion</a>
+        <div class="row mbd-hearder-navbar">
+            <div class="col-6">
+                <label for="check">
+                    <i class="fas fa-bars" id="sidebar_btn"></i>
+                </label>
             </div>
-        </div>  
+            <div class="col-6 d-flex justify-content-end">
+                <button class="logout"> 
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Déconnexion') }}
+                    </x-dropdown-link>
+                </form> 
+              </button>
+            </div>
+        </div>
     </header>
     <!--------fin header------------>
 
     <!--------sidebar start------------>
+    
         <div class="sidebar">
             <center>
                 <img src="{{asset('img/logo.png')}}" class="logo" alt="#">
@@ -77,13 +88,9 @@
                 </ul>
             </div>
             <div class="dropdown">
-                <a class="btn mbd-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="btn" href="{{route ('facture.index')}}">
                     Facture
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ route('facture.index')}}">Liste des factures</a></li>
-                    <li><a class="dropdown-item" href="{{ route('facture.create')}}">Ajouter une facture</a></li>
-                </ul>
             </div>
         </div> 
     <!--------sidebar end------------>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Produit;
 use Illuminate\Http\Request;
+use PDF;
+
 
 class ProduitController extends Controller
 {
@@ -14,7 +16,7 @@ class ProduitController extends Controller
             'produits'=>$produits
         ]);
     }
-    
+        
      // fonction qui nous permet d'appeler le formulaire d'ajout
     public function create(){
         return view('pages.ajoutProduit');
@@ -84,5 +86,5 @@ class ProduitController extends Controller
         $produit->delete();
         return back()->withSuccess("suppression réussi");
     }
-  
 }
+

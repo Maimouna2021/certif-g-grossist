@@ -19,8 +19,9 @@
     margin-left: -2%;
     height: 562px;
 }
-.boutonConnexion{
-    background-color: #8551C8;
+.mbdboutonlogout{
+    background-color: #000 !important;
+    color: white;
 }
 /*-------section accueil--------*/
  .mbd-acueil-container{
@@ -113,11 +114,7 @@
     position: relative;
     bottom: 24.12px;
 }
-/* .mbd-global-navbar-sidebar{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
+
 .sidebar{
     background: #790FFF;
     padding-top: 30px;
@@ -149,12 +146,7 @@
     transition: 0.5s;
     transition-property: background; 
 }
-/* .dropdown-menu{
-    background-color: #0D9DBB;
-} */
-/* .dropdown-menu a:hover{
-    background-color: #000;
-} */
+
 .sidebar a:hover{
     background: #fff;
 }
@@ -178,9 +170,6 @@ label #sidebar_btn{
 #check:checked + .mbd-hearder-navbar{
     min-width: 100%;
 }
-/* #check:checked ~ .sidebar a span{
-    display: none;
-} */
 #check:checked ~ .sidebar a{
     font-size: 20px;
     margin-left: 170px;
@@ -191,28 +180,7 @@ label #sidebar_btn{
     background-color: white;
     margin-left: 140px !important;
 }
-.tableau{
-    margin: 0 auto;
-}
-.bouton_retour{
-    padding: 5px;
-    background: #7851C8;
-    text-decoration: none;
-    float: right;
-    margin-bottom: 20px;
-    margin-right: 40px;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    transition: 0.5s;
-    transition-property: bacground;
-    position: relative;
-    bottom: 24.12px;
-}
-.bouton_retour:hover{
-    background: #0D9DBB;
-}
+
 .card-title a{
     text-decoration: none;
     color: white;
@@ -230,10 +198,7 @@ label #sidebar_btn{
     background-color: white;
     margin-left: 140px !important;
 }
-.tableau{
-    margin: 0 auto;
-}
-/*-------section commande--------*/
+-------section commande--------*/
 .commande{
     background-color: white;
     height: 100vh !important;
@@ -243,14 +208,7 @@ label #sidebar_btn{
     margin: 0 auto;
     margin-right: 40px !important;
 }
-/*-------section vente--------*/
-.boutonImprimer{
-    width: 100px;
-    height: 50px;
-    background-color: #8551C8;
-    color: white;
-    border-radius: 5px;
-}
+
 /*-------section ajout Commande--------*/
 .h1{
     text-align: center;
@@ -274,14 +232,7 @@ label #sidebar_btn{
     width: 50%;
     margin-left: 30%;
 }
-.boutonImpression{
-    background-color: #920FFF;
-    width: 80px;
-    height: 30px;
-    border-radius: 5px;
-    margin-left: 50%;
-    color: white;
-}
+
 /*-------section liste des ventes--------*/
 
 .listeVente{
@@ -300,6 +251,15 @@ label #sidebar_btn{
 }
 .boutonretour{
     background-color: #91a9d8 !important;
+}
+.boutonlogout{
+    margin-right: 100% !important;
+    width: 50px !important;
+    background-color: #790FFF !important;
+
+}
+.facture{
+    padding: 2px 50px;
 }
 
 

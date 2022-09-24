@@ -8,10 +8,12 @@
             @include('layouts.sidebare')
         </div>
     </div>
-    <div class="row mbd-liste-produit my-5 ">      
-        <div class="mbd-tableau my-5" >
+    <div class="row mbd-liste-produit my-5">      
+        <div class="mbd-tableau my-5">
         <div class="text-center">
             <h1>Liste des produits</h1>
+        </div>
+        <div class="d-flex justify-content-end mb-4">
         </div>
     <div style="overflow-x:auto;">
         <table class="table table-striped table-hover">
@@ -65,22 +67,22 @@
 {{-- Modale form update --}}
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modifier un produit</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-                <div class="container p-5">
-            <div class="row p-5 bg-white formulairedajout">
-                 <form method="POST" action="{{ route('produit.update', $produit->id)}}" enctype="multipart/form-data" class="w-50">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modifier un produit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+    <div class="modal-body " style="background:#8551C8;">
+    <div class="content">
+        <div class="row formulairedajout">
+            <form method="POST" action="{{ route('produit.update', $produit->id)}}" enctype="multipart/form-data" class="w-50">
                 @method("PUT")
                 @csrf
 
                 <!-- libelle -->
                 <div>
-                    <x-input id="name" class="block mt-1 w-full form-control" type="text" name="libelle" :value="old('libelle')" placeholder="libelle" required autofocus />
+                    <x-input id="name" class="block mt-1 ml-5 w-full form-control" type="text" name="libelle" :value="old('libelle')" placeholder="libelle" required autofocus />
                 </div>
 
                 <!-- description -->
@@ -106,15 +108,22 @@
                 <div class="mt-4">
                     <x-input id="date_peremption" class="block mt-1 w-full form-control" type="date" name="date_peremption" placeholder="date_peremption" required />
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <button type="submit" class="btn bg-white">Enregistrer</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn bg-white" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                 
                 </div>
-        </form>
+                
+            </form>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
+    </div>
+    </div>
 </div>
 
 
