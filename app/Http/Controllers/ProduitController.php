@@ -46,8 +46,6 @@ class ProduitController extends Controller
         Produit::create($form_data);
     
         return redirect()->Route('produit.index');
-
-        // dd($request->all());
     }
 
     public function edit($id){

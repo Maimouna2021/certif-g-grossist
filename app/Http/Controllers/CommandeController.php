@@ -57,75 +57,16 @@ class CommandeController extends Controller
         Commande::create($form_data);
        return view('pages.commande', compact('form_data', 'fournisseur', 'commandes'));
         // return redirect()->Route('facture.index');
-    }
-    
-    function get_facture()
-    {
-        $facture = DB::table('commandes')
-                            ->limit(1)
-                            ->latest()
-                            ->get();
-           
-        return $facture;
-                          
-    }
-    function pdf()
-    {
-        $pdf = App::make('dompdf.wrapper');
-        $pdf->loadHTML($this->
-        convert_facture_to_html());
-        $pdf->stream();
-    }
-    function convert_facture_to_html()
-    {
-        $facture = $this->get_facture();
-        foreach($facture as $facture)
-        { 
-        $output = '
-            <div class="row">
-            <div class="col">
-                <p>Numero Commande</p>
-             </div>
-            <div class="col">
-                <p>{{'.$facture->numero_commande.'}}</p>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Description</p>
-                </div>
-                <div class="col">
-                    <p>{{'.$facture->description.'}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Date Commande</p>
-                </div>
-                <div class="col">
-                    <p>{{'.$facture->date_commande.'}}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Date Livraison</p>
-                </div>
-                <div class="col">
-                    <p>{{'.$facture->date_livraison.'}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Fournisseur prenom fournisseur</p>
-                    <p>Fournisseur nom fournisseur</p>
-                </div>
-                <div class="col">
-                
-                </div>
-            </div>
 
-        ';
-    }
+        
+        $commandes->update($form_data);
     
-    return $output;
-    } 
+        return back()->withSuccess("entregistrement réussi");
+    }
+  
+    public function delete($id){
+        $commande = Commande::find($id);
+        $commande->delete();
+        return back()->withSuccess("suppression réussi");
+    }
 }

@@ -20,8 +20,8 @@
                 </label>
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <button class="logout"> 
-                <form method="POST" action="{{ route('logout') }}">
+                <button class="logout" style="background: #7851C8;"> 
+                <form method="POST" class="" action="{{ route('logout') }}">
                     @csrf
                     <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault();

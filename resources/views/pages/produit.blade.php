@@ -8,14 +8,13 @@
             @include('layouts.sidebare')
         </div>
     </div>
-    <div class="row mbd-liste-produit my-5">      
-        <div class="mbd-tableau my-5">
-        <div class="text-center">
-            <h1>Liste des produits</h1>
-        </div>
-        <div class="d-flex justify-content-end mb-4">
-        </div>
-    <div style="overflow-x:auto;">
+    <div class="row mbd-liste-produit my-5 p-5">      
+                <div class="text-center">
+                    <h1 class="mbd-titre-1">Liste des produits</h1>
+                </div>
+    <div class="mbd-tableau my-5">
+            <div class="d-flex justify-content-end mb-4">
+            <div style="overflow-x:auto;">
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -56,7 +55,7 @@
                 </tbody>
                 @endforeach
             </table>
-            {{ $produits->links() }}
+            {{-- {{ $produits->links() }} --}}
             </div>
         </div>
     </div>

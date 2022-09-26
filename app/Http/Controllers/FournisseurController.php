@@ -73,7 +73,7 @@ class FournisseurController extends Controller
     
         return back()->withSuccess("entregistrement réussi");
     }
-
+  
     public function delete($id){
         $fournisseur = Fournisseur::find($id);
         $fournisseur->delete();

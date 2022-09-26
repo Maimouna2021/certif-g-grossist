@@ -11,72 +11,24 @@
 
     <div class="acueil-content">
         <div class="row mbd-liste-produit my-5">    
-                <div class="text-center">
+                <div class="text-center p-3">
                     <h1>Liste des factures</h1>
                 </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row row-cols-3">
         @foreach ($factures as $facture)
-        <div class="col mb-1 facture">
-            <div class="card border-success mb-1" style="width: 20rem; ">
-                <div class="card-header text-center bg-transparent border-success">N° Facture: {{$facture->numero_commande}}</div>
-                <div class="card-body text-success">
-                  <h5 class="card-title text-center">{{$facture->fournisseur->prenom }} {{$facture->fournisseur->nom }} {{$facture->fournisseur->tel }}</h5>
+        <div class="col mb-1 facture ">
+            <div class="card mb-1" style="width: 17rem;">
+                <div class="card-header text-center" style="background: #7851C8">N° Facture: {{$facture->numero_commande}}</div>
+                <div class="card-body ">
+                  <h5 class="card-title">{{$facture->fournisseur->prenom }} {{$facture->fournisseur->nom }} {{$facture->fournisseur->tel }}</h5>
                   <p class="card-text text-center">{{$facture->description }}.</p>
                 </div>
-                <div class="card-footer bg-transparent border-success"> Date de commande : {{$facture->date_commande }} Date de livraison : {{$facture->date_livraison }}</div>
+                <div class="card-footerX"> Date de commande : {{$facture->date_commande }} Date de livraison : {{$facture->date_livraison }}</div>
             </div>
         </div>
         @endforeach
     </div>
-
-      
-        
-{{--         
-         <div class="row">
-            <div class="col">
-                <p>Numero Commande</p>
-           </div>
-
-            <div class="col">
-                <p>{{$form_data["numero_commande"]}}</p>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Description</p>
-                </div>
-                <div class="col">
-                    <p>{{$form_data["description"]}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Date Commande</p>
-                </div>
-                <div class="col">
-                    <p>{{$form_data["date_commande"]}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Date Livraison</p>
-                </div>
-                <div class="col">
-                    <p>{{$form_data["date_livraison"]}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Fournisseur prenom fournisseur</p>
-                    <p>Fournisseur nom fournisseur</p>
-                </div>
-                <div class="col">
-                    <p>{{$fournisseur->prenom}}</p>
-                    <p>{{$fournisseur->nom}}</p>
-                </div>
-            </div> --}}
-        {{-- </div> --}}
-
 </div>
 
